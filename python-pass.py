@@ -8,9 +8,9 @@ class Solution:
         longest_palind = ""
         input_length = len(string_input)
         # loop on our input tow times first from 0-length
-        # second loop from the length to first index
+        # second loop from the length to our current largest palindromic
         for latter_index in range(input_length):
-            for inverse_latter_index in range(input_length, latter_index, -1): # start, end, step
+            for inverse_latter_index in range(input_length, len(longest_palind), -1): # start, end, step
                 # check the length to make sure we have the longest palindromic
                 current_length = inverse_latter_index - latter_index
                 if len(longest_palind) > current_length:
@@ -28,4 +28,4 @@ class Solution:
 # test the functio
 print(Solution.longest_palindromic("babad"))                       # aba
 print(Solution.longest_palindromic("aaasaippuakivikauppiasbbbb"))  # saippuakivikauppias
-print(Solution.longest_palindromic("HHabacefec"))  # cefec
+print(Solution.longest_palindromic("HHabacefec"))                  # cefec
